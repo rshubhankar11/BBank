@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    url: jdbc:mariadb://localhost:3306/spring_security
+    name: spring_security
+    password: btiger
+  jpa:
+    properties:
+      hibernate:
+        fromat_sql: 'true'
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+    #      ddl-auto: update
+    show-sql: 'true'
