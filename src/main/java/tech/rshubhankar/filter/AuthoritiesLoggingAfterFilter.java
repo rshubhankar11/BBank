@@ -1,13 +1,11 @@
 package tech.rshubhankar.filter;
 
-import lombok.extern.log4j.Log4j2;
 import jakarta.servlet.*;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-
 import java.io.IOException;
-import java.util.logging.LogRecord;
 
 /**
  * @author Rabiroshan Shubhankar
@@ -47,5 +45,6 @@ public class AuthoritiesLoggingAfterFilter implements Filter {
             log.info("User " + authentication.getName() + " is successfully authenticated and "
                     + "has the authorities " + authentication.getAuthorities().toString());
         }
+        chain.doFilter(request, response);
     }
 }
